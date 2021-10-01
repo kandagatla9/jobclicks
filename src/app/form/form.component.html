@@ -1,0 +1,319 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(#005C97, #363795);">
+    <a class="navbar-brand" href="#" style="color: white;">JOB Clicks</a>
+    <button style="color: white;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="color: white;"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="color: white;">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"  style="color: white;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"  style="color: white;">Job</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"  style="color: white;">Resume</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"  style="color: white;">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"  style="color: white;">VMS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"  style="color: white;"><img src="../../assets/PNG/notification.png" alt=""></a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <!---------------------------------->
+  <img src="../../assets/Image/Group 42297.png" style="width: 360px;" alt="">
+  <!----------------------------------->
+  <h3 style="text-align: center; padding: 10px; color: #005C97;">Company Profile</h3>
+  <!------------------------------->
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button style="background: linear-gradient(#005C97, #363795); color:white;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Company Details
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <!---->
+          <form [formGroup]="requiredForm" novalidate>
+            <label >Company Name</label>
+            <sup class="formSup">*</sup><br>
+            <input type="text"  name="companyname" formControlName="companyname">
+            <!--Company Name--validation-->
+            <div *ngIf="m.companyname.touched && m.companyname.invalid" class="alert alert-danger" 
+                          style="position: static;">
+                            <div *ngIf="m.companyname.errors?.required">Please enter Company Name</div>
+                            <div *ngIf="m.companyname.errors?.pattern">Company name contains only alphabetics and atleast 3 characters</div>
+                          </div>
+            <!----><br>
+            <label  style="width: 123px;">Company Email ID</label>
+            <sup class="formSup">*</sup><br>
+            <input formControlName="companyEmailId" type="text">
+            <!--Company Email ID-validation-->
+            <div *ngIf="m.companyEmailId.touched && m.companyEmailId.invalid" class="alert alert-danger" 
+                          style="position: static;">
+                            <div *ngIf="m.companyEmailId.errors?.required">Please enter Company Email ID</div>
+                            <div *ngIf="m.companyEmailId.errors?.pattern">Please Enter Valid Email Address</div>
+                          </div>
+            <!----><br>
+            <label >Company Website</label>
+            <sup class="formSup">*</sup><br>
+            <input type="text" formControlName="companywebsite">
+             <!--Company Website URL-validation-->
+             <div *ngIf="m.companywebsite.touched && m.companywebsite.invalid" class="alert alert-danger" 
+             style="position: static;">
+               <div *ngIf="m.companywebsite.errors?.required">Please enter Company website URL</div>
+               <div *ngIf="m.companywebsite.errors?.pattern">Please Enter Valid URL</div>
+             </div>
+            <!----><br>
+            <label >About Company</label>
+            <sup class="formSup">*</sup><br>
+            <!--<img src="../assets/PNG/Text controllers.png" alt="" style="width: 162px; margin-left: 40px; margin-top: -10px;">-->
+            <textarea type="text" formControlName="aboutcompany" >
+          </textarea>
+            <!--About Company-validation-->
+            <div *ngIf="m.aboutcompany.touched && m.aboutcompany.invalid" class="alert alert-danger" 
+            style=" position: static;">
+              <div *ngIf="m.aboutcompany.errors?.required">Please fill About Company field</div>
+              <div *ngIf="m.aboutcompany.errors?.pattern">Please Enter atleast 50 characters About Company</div>
+            </div>
+            <!----><br>
+            <label  >Contact Number</label>
+            <sup class="formSup">*</sup><br>
+           <select name="" id="" ><option value="">+1</option></select> 
+           <input formControlName="contactno" type="text">
+           <!--Contact Number-validation-->
+           <div *ngIf="m.contactno.touched && m.contactno.invalid" class="alert alert-danger" 
+           style="position: static;">
+             <div *ngIf="m.contactno.errors?.required">Please Enter Contact Number</div>
+             <div *ngIf="m.contactno.errors?.pattern">Please Enter Valid 10 digits contact number</div>
+           </div>
+            <!----><br>
+            <label >Alternate Number</label><br>
+            <select name="" id=""><option value="">+1</option></select>
+            <input class="formIn" type="text">
+            <!----><br>
+            <label>Industry Type</label>
+            <sup class="formSup">*</sup><br>
+            <input type="text" formControlName="industrytype">
+            <!--Industry Type-validation-->
+           <div *ngIf="m.industrytype.touched && m.industrytype.invalid" class="alert alert-danger" 
+           style="position: static;">
+             <div *ngIf="m.industrytype.errors?.required">Please Enter Industry Type</div>
+             <div *ngIf="m.industrytype.errors?.pattern">Please Enter atleast 2 characters</div>
+           </div>
+            <!----><br>
+            <label  style="width:52px;">Country</label>
+            <sup class="formSup">*</sup><br>
+            <input type="country" formControlName="country">
+            <!--Country-validation-->
+           <div *ngIf="m.country.touched && m.country.invalid" class="alert alert-danger" 
+           style="position: static;">
+             <div *ngIf="m.country.errors?.required">Please Enter Country Field</div>
+             <div *ngIf="m.country.errors?.pattern">Please Enter atleast 3 characters</div>
+           </div>
+            <!----><br>
+            <label >State</label>
+            <sup class="formSup">*</sup><br>
+            <input type="text" formControlName="state">
+            <!--State-validation-->
+           <div *ngIf="m.state.touched && m.state.invalid" class="alert alert-danger" 
+           style="position: static;">
+             <div *ngIf="m.state.errors?.required">Please Enter State Field</div>
+             <div *ngIf="m.state.errors?.pattern">Please Enter atleast 3 characters</div>
+           </div>
+             <!----><br>
+             <label>City</label>
+             <sup class="formSup">*</sup><br>
+             <input type="text" formControlName="city">
+              <!--City-validation-->
+           <div *ngIf="m.city.touched && m.city.invalid" class="alert alert-danger" 
+           style="position: static;">
+             <div *ngIf="m.city.errors?.required">Please Enter State Field</div>
+             <div *ngIf="m.city.errors?.pattern">Please Enter atleast 3 characters</div>
+           </div>
+              <!----><br>
+            <label>Company Address 1</label>
+            <sup class="formSup">*</sup><br>
+            <input type="text" formControlName="companyaddress" >
+            <!--Company Address 1-validation-->
+            <div *ngIf="m.companyaddress.touched && m.companyaddress.invalid" class="alert alert-danger" 
+            style="position: static;">
+              <div *ngIf="m.companyaddress.errors?.required">Please enter company Address</div>
+              <div *ngIf="m.companyaddress.errors?.pattern">Please Enter atleast 4 characters</div>
+            </div>
+             <!----><br>
+             <label>Company Address 2</label>
+             <sup class="formSup">*</sup><br>
+             <input type="text" formControlName="companyaddress2">
+             <!--Company Address 2-validation-->
+            <div *ngIf="m.companyaddress2.touched && m.companyaddress2.invalid" class="alert alert-danger" 
+            style="position: static;">
+              <div *ngIf="m.companyaddress2.errors?.required">Please enter company Address</div>
+              <div *ngIf="m.companyaddress2.errors?.pattern">Please Enter atleast 4 characters</div>
+            </div>
+              <!----><br>
+            <label  style="width: 121px;">Map Location Link</label><br>
+            <input type="text">
+             <!----><br>
+             <label  style="width: 94px;">Facebook Link</label><br>
+             <input type="text">
+             <!----><br>
+             <label  style="width: 75px;">Twitter Link</label><br>
+             <input type="text">
+             <!----><br>
+             <label  style="width: 85px;">LinkedIn Link</label><br>
+             <input type="text"  >
+            </form>
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button style="background: linear-gradient(#005C97, #363795); color:white;"  class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Contact Person Details
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <form [formGroup]="requiredForm" novalidate>
+                <label>Contact Person Name</label>
+                <sup class="formSup">*</sup>
+                <input type="text" formControlName="contactpersonname">
+                 <!--Contact Person Name-validation-->
+                 <div *ngIf="m.contactpersonname.touched && m.contactpersonname.invalid" class="alert alert-danger" 
+                 style=" position: static;">
+                   <div *ngIf="m.contactpersonname.errors?.required">Please enter Contact Person Name</div>
+                   <div *ngIf="m.contactpersonname.errors?.pattern">Please Enter atleast 3 characters</div>
+                 </div>
+                <!------><br>
+                <label>Email for Communication</label>
+                <sup class="formSup">*</sup>
+                <input type="text" formControlName="email2" >
+                <!--Email 2-validation-->
+                <div *ngIf="m.email2.touched && m.email2.invalid" class="alert alert-danger" 
+                style="position: static;">
+                  <div *ngIf="m.email2.errors?.required">Please Enter Email</div>
+                  <div *ngIf="m.email2.errors?.pattern">Please Enter valid email address</div>
+                </div>
+                <!----><br>
+                <label >Contact Number</label><br>
+                <select name="" id="" ><option value="">+1</option></select> 
+               <input type="text">
+                <!----><br>
+                <label  style="width: 147px;">Job Title (Designation)</label>
+                <input type="text">
+              </form>
+        </div>
+      </div>
+    </div>
+    
+  </div><br>
+  <!------------------------------------------->
+  <button style="margin-left: 30%;margin-right: 10%; color: black; background-color: rgb(237, 229, 229);" class="btn btn">Cancel</button>
+  <button class="btn btn" style="background: linear-gradient(#005C97, #363795); color: white;">Save Profile</button>
+  <!------------------------------------------------->
+  <!---Upload Logo------>
+<div class="w3-card uploadCard" style="background-color: white;">
+<p class="uploadLogo">Upload logo</p>
+<hr>
+<p class="companyLogo">Company Logo</p>
+<div style="width: 118px; height: 118px; margin-left: 26px; background-color: #EFEFEF; border-radius: 50%;">
+
+</div>
+<button type="submit" class="btn btn upload">Upload</button>
+<button class="btn btn cancel">Cancel</button>
+</div>
+<!--------->
+<div class="w3-card quickCard">
+    <p class="quickAccess">Quick Access</p>
+    <hr>
+    <a href="#" style="text-decoration: none;"><p class="companyDetails">Company Details
+      <img src="../../assets/PNG/done - green.png" alt=""
+       style="width:15px; height: 15px;"></p></a>
+    
+    <button class="btn btn contactPersonDetails"><span > Contact Person Details</span>
+      <span style="padding-left: 100px;"><img src="../../assets/PNG/done - white.png" alt=""></span>
+    </button>
+    </div>   <br>
+<!------------------------>
+<div style="text-align: center;">
+    <h4 style="color: #004475;">Subscribe Our Newsletter!</h4>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a 
+        page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+     <input type="text" placeholder="Enter your email address">  
+</div>    <br>
+<!------------------------------------------>
+<div class="footer">
+    <div class="w3-row" style=" color: #FFFFFF; background: linear-gradient(#005C97, #363795);">
+      <div class="w3-col m4">
+        <p class="jobClicks">JOB Clicks</p>
+        <p class="jobClicksText" style="margin-left: 10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        <div class="w3-row">
+          <div class="w3-col m6 s6">
+            <p style="width:51px; height: 13px; margin-left: 8px;font-size: 10px; margin-top: 11.76;">Contact us</p>
+            <p style="width: 89px; height: 13px; margin-left:9.03px; font-size: 10px; margin-top: 10.19px;">
+             <i class="fa fa-phone"></i> +1-202-555-0104</p>
+            <p style="width: 110px; height: 13px; margin-left: 9.03px; margin-top: 6.7px; font-size: 10px;">
+              <i class="fa fa-envelope"></i> example@gmail.com</p>
+          </div>
+          <div class="w3-col m6 s6">
+            <p style="width: 43px; height: 13px; margin-left: 6.88px; font-size: 10px;">Follow us</p>
+            <a href="#" style="color: #FFFFFF;"><i style="width: 15.72; height: 15.72px; margin-left: 6.88px;" class="fa fa-facebook"></i></a>
+           <a href="#" style="color: #FFFFFF;"> <i style="width: 18.12; height: 14.73px; margin-left: 12.02px;" class="fa fa-twitter"></i></a>
+           <a href="#" style="color: #FFFFFF;"> <i style="width: 15.46; height: 15.46px; margin-left: 11.76px;" class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m2 s6">
+        <p style="width: 67px; height: 15px; margin-left: 12px; font-size: 12px; margin-top: 39px;">Information</p>
+        <p style="width: 41px; height: 13px; font-size: 10px; margin-left: 12px; margin-top: 9.9px;">About us</p>
+        <p class="infoText" style="width: 103px; margin-left: 12px;">Teams and Conditions</p>
+        <p class="infoText" style="width: 64px; margin-left: 12px;">Privacy Policy</p>
+        <p class="infoText" style="width: 72px; margin-left: 12px;">Careers with us</p> 
+        <p class="infoText" style="width: 49px; margin-left: 12px;">Contact us</p>
+        <p class="infoText" style="width: 24px; margin-left: 12px;">FAQs</p>
+      </div>
+      <div class="w3-col m2 s6">
+        <p class="browseText" style="width: 68px; height: 15px; margin-left: 12px; font-size: 12px;margin-top: 39px;">Browse Jobs</p>
+        <p class="browseText" style="width: 70px; margin-left: 12px; margin-top: 9.9;">Browse all jobs</p>
+        <p class="browseText" style="width: 46px; margin-left: 12px;">Govt. Jobs</p>
+        <p class="browseText" style="width: 82px; margin-left: 12px;">International jobs</p>
+        <p class="browseText" style="width: 53px; margin-left: 12px;">Jobs in Gulf</p>
+        <p class="browseText" style="width: 81px; margin-left: 12px;">Jobs by Company</p>
+        <p class="browseText" style="width: 92px; margin-left: 12px;">Jobs by Designation</p>
+        <p class="browseText" style="width: 76px; margin-left: 12px;">Jobs by Location</p>
+        <p class="browseText" style="width: 59px; margin-left: 12px;">Jobs by Skills</p>
+      </div>
+      <div class="w3-col m2 s6">
+        <p  class="jobSeekersText" style="width: 61px; height: 15px; margin-left: 12px; margin-top: 39px;font-size: 12px;">Jobseekers</p>
+        <p class="jobSeekersText" style="width: 61px;height: 13px; margin-left: 12px; margin-top: 9.9px; font-size: 10px;">Register Now</p>
+        <p class="jobSeekersText" style="width: 50px; margin-left: 12px;">Search Job</p>
+        <p class="jobSeekersText" style="width: 25px; margin-left: 12px;">Login</p>
+        <p class="jobSeekersText" style="width: 74px; margin-left: 12px;">Create Job Alert</p>
+        <p class="jobSeekersText" style="width: 82px; margin-left: 12px;">Report a Problem</p>
+      </div>
+      <div class="w3-col m2 s6">
+        <p  class="employersText" style="width: 59px;height: 15px;margin-top: 39px; font-size: 12px;">Employers</p>
+        <p  class="employersText" style="width: 52px;height: 13px;margin-top: 9.9px; font-size: 10px;">Job Posting</p>
+        <p class="employersText" style="width: 118px;">Resume Database Access</p>
+        <p class="employersText" style="width: 70px;">Recruiter Login</p>
+      </div>
+    
+    </div>
+    <!--Copyright-->
+    <div class="copyRight">
+    <p class="copyRightPara">Copyright © 1990 - 2021 Dice. All rights reserved. Use of this site is subject to certain Terms and Conditions</p>
+    </div>
+    </div>
+
+
+    
+    
